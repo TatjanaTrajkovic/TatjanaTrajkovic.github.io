@@ -2,4 +2,4 @@
 - [x] Skapa Tatjanas personliga CV med Java- och fullstackfokus.
 - [x] Visa utbildningar, kompetenser, eget utbildningsprojekt och korrekt kursinnehåll.
 - [x] Lägg till utskriftsvänligt CV och mobilmeny.
-- [ ] Kontrollera sidan, kurslistan och utskriften.
+- [x] Kontrollera sidan, kurslistan och utskriften.
