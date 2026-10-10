@@ -236,6 +236,7 @@ td:last-child, th:last-child { text-align: right; white-space: nowrap; }
 .code-indent { padding-left: 18px; }
 .project-visual-bottom { display: flex; align-items: center; gap: 10px; padding: 16px 22px; border-top: 1px solid var(--code-comment); font-size: 10px; color: var(--code-comment); }
 .project-info h3 { font-size: 23px; margin: 13px 0; }
+.project-info .project-subtitle { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); margin: -6px 0 16px; }
 .project-info p { margin-bottom: 12px; }
 .project-info .tags { margin-top: 22px; }
 .project-link { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin-top: 18px; padding: 9px 13px; border: 1px solid var(--primary); border-radius: 4px; font-size: 12px; font-weight: 650; color: var(--primary); }
