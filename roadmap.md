@@ -9,4 +9,6 @@
 - [x] Formulera LIA-sektionen som en säkrad praktikplats med start november 2026.
 - [x] Lägg till kontaktsektion med e-post, telefon, ort, LinkedIn och GitHub.
 - [x] Koppla projektet till hotellbokningsappen på GitHub.
+- [x] Lägg till frilansuppdraget för OneUp Engineering som ett eget projektkort.
+- [ ] Bekräfta stavningen av företagsnamnet OneUp Engineering med Tatjana.
 - [ ] Publicera sidan och dela länken med VGR.

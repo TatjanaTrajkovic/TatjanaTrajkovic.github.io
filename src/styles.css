@@ -242,6 +242,24 @@ td:last-child, th:last-child { text-align: right; white-space: nowrap; }
 .project-link:hover { background: var(--primary); color: var(--primary-foreground); }
 .project-link svg:last-child { transition: transform .2s ease; }
 .project-link:hover svg:last-child { transform: translate(2px, -2px); }
+.project-content + .project-content { margin-top: 46px; padding-top: 46px; border-top: 1px solid var(--border); }
+.project-phone { display: flex; flex-direction: column; align-items: center; padding-top: 24px; }
+.project-phone .project-visual-bottom { width: 100%; }
+.phone-frame { width: 200px; border: 1px solid var(--code-comment); border-radius: 24px; padding: 15px 15px 20px; margin-bottom: 24px; }
+.phone-notch { width: 54px; height: 5px; border-radius: 3px; background: var(--code-comment); margin: 0 auto 16px; }
+.phone-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; color: var(--code-text); }
+.phone-sub { display: block; font-size: 9px; color: var(--code-comment); margin-top: 3px; }
+.phone-bar { height: 6px; border-radius: 3px; background: var(--code-comment); opacity: .45; margin: 14px 0 17px; overflow: hidden; }
+.phone-bar > span { display: block; height: 100%; width: 72%; background: var(--code-keyword); border-radius: 3px; opacity: 1; }
+.phone-rows { list-style: none; display: grid; gap: 11px; }
+.phone-rows li { display: flex; align-items: center; gap: 9px; }
+.phone-rows li > span { height: 7px; border-radius: 3px; background: var(--code-comment); opacity: .5; }
+.phone-rows li:nth-child(1) > span { width: 62%; }
+.phone-rows li:nth-child(2) > span { width: 46%; }
+.phone-rows li:nth-child(3) > span { width: 70%; }
+.phone-rows li > em { width: 7px; height: 7px; border-radius: 50%; background: var(--code-keyword); margin-left: auto; }
+.project-note { display: inline-flex; align-items: center; gap: 8px; margin-top: 17px; font-size: 11px; color: var(--muted-foreground); }
+.project-note::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
 .lia-section { padding: 58px 6.25%; background: var(--secondary); display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
 .lia-section h2 { font-size: 35px; }
 .lia-line { display: flex; gap: 9px; align-items: center; font-size: 10px; font-weight: 650; color: var(--primary); margin-top: 25px; }
