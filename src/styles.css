@@ -263,6 +263,7 @@ footer .wordmark { font-size: 21px; }
   .skill-grid { grid-template-columns: repeat(2, 1fr); }
   .project-content { gap: 28px; }
   .project-code { font-size: 9px; padding: 28px 18px; }
+  .contact-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 640px) {
   html { scroll-padding-top: 20px; }
@@ -298,6 +299,9 @@ footer .wordmark { font-size: 21px; }
   .project-info h3 { font-size: 22px; }
   .lia-section { padding: 42px 6%; }
   .lia-section h2 { font-size: 30px; }
+  .lia-card { padding: 22px; }
+  .lia-points li { grid-template-columns: 1fr; gap: 4px; }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
   footer { flex-wrap: wrap; padding: 25px 6%; }
   footer > span:last-child { width: 100%; }
 }
@@ -325,4 +329,9 @@ footer .wordmark { font-size: 21px; }
   .project-content { display: block; }
   .course-list { display: none; }
   .lia-section { grid-template-columns: 1fr 2fr; gap: 25px; border-top: 1px solid var(--border); }
+  .lia-card { break-inside: avoid; padding: 14px 16px; }
+  .contact-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .contact-item { padding: 8px 10px; gap: 3px; break-inside: avoid; }
+  .contact-item svg { display: none; }
+  .contact-value { font-size: 9px; }
 }
