@@ -238,6 +238,10 @@ td:last-child, th:last-child { text-align: right; white-space: nowrap; }
 .project-info h3 { font-size: 23px; margin: 13px 0; }
 .project-info p { margin-bottom: 12px; }
 .project-info .tags { margin-top: 22px; }
+.project-link { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin-top: 18px; padding: 9px 13px; border: 1px solid var(--primary); border-radius: 4px; font-size: 12px; font-weight: 650; color: var(--primary); }
+.project-link:hover { background: var(--primary); color: var(--primary-foreground); }
+.project-link svg:last-child { transition: transform .2s ease; }
+.project-link:hover svg:last-child { transform: translate(2px, -2px); }
 .lia-section { padding: 58px 6.25%; background: var(--secondary); display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
 .lia-section h2 { font-size: 35px; }
 .lia-line { display: flex; gap: 9px; align-items: center; font-size: 10px; font-weight: 650; color: var(--primary); margin-top: 25px; }
@@ -331,6 +335,9 @@ footer .wordmark { font-size: 21px; }
   .skill-item > p { min-height: 0; margin: 5px 0 10px; }
   .education-item, .project-content { break-inside: avoid; }
   .project-content { display: block; }
+  .project-link { padding: 0; border: none; }
+  .project-link svg { display: none; }
+  .project-link::after { content: " — " attr(href); font-weight: 400; color: var(--muted-foreground); }
   .course-list { display: none; }
   .lia-section { grid-template-columns: 1fr 2fr; gap: 25px; border-top: 1px solid var(--border); }
   .lia-card { break-inside: avoid; padding: 14px 16px; }
