@@ -302,6 +302,8 @@ footer .wordmark { font-size: 21px; }
   .lia-card { padding: 22px; }
   .lia-points li { grid-template-columns: 1fr; gap: 4px; }
   .contact-grid { grid-template-columns: 1fr 1fr; }
+  .contact-item:first-child { grid-column: 1 / -1; }
+  .contact-value { font-size: 10px; }
   footer { flex-wrap: wrap; padding: 25px 6%; }
   footer > span:last-child { width: 100%; }
 }
