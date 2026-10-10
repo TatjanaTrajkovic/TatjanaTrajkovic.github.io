@@ -353,6 +353,8 @@ footer .wordmark { font-size: 21px; }
   .skill-item > p { min-height: 0; margin: 5px 0 10px; }
   .education-item, .project-content { break-inside: avoid; }
   .project-content { display: block; }
+  .project-content + .project-content { margin-top: 14px; padding-top: 14px; }
+  .project-note::before { display: none; }
   .project-link { padding: 0; border: none; }
   .project-link svg { display: none; }
   .project-link::after { content: " — " attr(href); font-weight: 400; color: var(--muted-foreground); }
