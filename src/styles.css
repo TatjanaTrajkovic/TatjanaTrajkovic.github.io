@@ -241,6 +241,19 @@ td:last-child, th:last-child { text-align: right; white-space: nowrap; }
 .lia-section { padding: 58px 6.25%; background: var(--secondary); display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
 .lia-section h2 { font-size: 35px; }
 .lia-line { display: flex; gap: 9px; align-items: center; font-size: 10px; font-weight: 650; color: var(--primary); margin-top: 25px; }
+.lia-card { background: var(--background); border: 1px solid var(--border); border-radius: 8px; padding: 27px 29px; }
+.lia-card h3 { font-size: 18px; margin: 11px 0 4px; }
+.lia-card .lia-org { font-size: 11px; color: var(--muted-foreground); margin-bottom: 19px; }
+.lia-points { list-style: none; display: grid; gap: 13px; font-size: 12px; line-height: 1.75; color: var(--muted-foreground); }
+.lia-points li { display: grid; grid-template-columns: 96px 1fr; gap: 12px; }
+.lia-points strong { color: var(--primary); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding-top: 4px; }
+.lia-card .tags { margin-top: 21px; }
+.contact-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.contact-item { display: flex; flex-direction: column; gap: 8px; padding: 19px; border: 1px solid var(--border); border-radius: 6px; background: var(--background); color: inherit; text-decoration: none; transition: border-color .2s; }
+.contact-item:hover { border-color: var(--primary); }
+.contact-item svg { color: var(--primary); }
+.contact-label { font-size: 9px; font-weight: 700; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: .06em; }
+.contact-value { font-size: 11px; font-weight: 600; word-break: break-word; }
 footer { padding: 30px 6.25%; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 footer > span { font-size: 9px; color: var(--muted-foreground); }
 footer .wordmark { font-size: 21px; }
@@ -250,6 +263,7 @@ footer .wordmark { font-size: 21px; }
   .skill-grid { grid-template-columns: repeat(2, 1fr); }
   .project-content { gap: 28px; }
   .project-code { font-size: 9px; padding: 28px 18px; }
+  .contact-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 640px) {
   html { scroll-padding-top: 20px; }
@@ -285,6 +299,11 @@ footer .wordmark { font-size: 21px; }
   .project-info h3 { font-size: 22px; }
   .lia-section { padding: 42px 6%; }
   .lia-section h2 { font-size: 30px; }
+  .lia-card { padding: 22px; }
+  .lia-points li { grid-template-columns: 1fr; gap: 4px; }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+  .contact-item:first-child { grid-column: 1 / -1; }
+  .contact-value { font-size: 10px; }
   footer { flex-wrap: wrap; padding: 25px 6%; }
   footer > span:last-child { width: 100%; }
 }
@@ -312,4 +331,9 @@ footer .wordmark { font-size: 21px; }
   .project-content { display: block; }
   .course-list { display: none; }
   .lia-section { grid-template-columns: 1fr 2fr; gap: 25px; border-top: 1px solid var(--border); }
+  .lia-card { break-inside: avoid; padding: 14px 16px; }
+  .contact-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .contact-item { padding: 8px 10px; gap: 3px; break-inside: avoid; }
+  .contact-item svg { display: none; }
+  .contact-value { font-size: 9px; }
 }
