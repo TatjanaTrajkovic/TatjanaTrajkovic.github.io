@@ -12,6 +12,7 @@
 - [x] Lägg till frilansuppdraget för OneUp Engineering som ett eget projektkort.
 - [x] Ange budgetappens namn Budgeteero på projektkortet.
 - [x] Lägg till LabFlow, hennes eget lärprojekt i Java, som ett projektkort.
+- [x] Ange budgetappens namn Budgeteero på projektkortet, med huvudrubriken "Budget-app för mobil".
 - [ ] Skicka länken till koden för LabFlow så läggs den till på kortet.
 - [ ] Bekräfta stavningen av företagsnamnet OneUp Engineering med Tatjana.
 - [ ] Publicera sidan och dela länken med VGR.
