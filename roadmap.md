@@ -8,4 +8,5 @@
 - [x] Lyft LIA-målet mot VGR Design och Mjukvaruutveckling/integrationslösningar, hösten 2026.
 - [x] Formulera LIA-sektionen som en säkrad praktikplats med start november 2026.
 - [x] Lägg till kontaktsektion med e-post, telefon, ort, LinkedIn och GitHub.
+- [x] Koppla projektet till hotellbokningsappen på GitHub.
 - [ ] Publicera sidan och dela länken med VGR.
