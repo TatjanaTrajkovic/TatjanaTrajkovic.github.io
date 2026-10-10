@@ -410,5 +410,5 @@ footer .wordmark { font-size: 21px; }
 .header-tools { display: flex; align-items: center; gap: 8px; }
 .lang-button { height: 38px; min-width: 44px; font-size: 12px; font-weight: 700; box-shadow: none; }
 .theme-button { height: 38px; width: 38px; box-shadow: none; }
-@media (max-width: 640px) { .header-tools .print-button { display: none; } .header-tools { margin-left: auto; } }
+@media (max-width: 640px) { .header-tools { margin-left: auto; gap: 6px; } .header-tools .print-button { margin-left: 0; } .lang-button, .theme-button { height: 36px; } .theme-button { width: 36px; } .lang-button { min-width: 38px; padding: 0 8px; } }
 @media print { .header-tools .lang-button, .header-tools .theme-button { display: none !important; } }
