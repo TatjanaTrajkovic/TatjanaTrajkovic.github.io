@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { ArrowDown, ArrowUpRight, Code2, Database, Download, FlaskConical, Github, GraduationCap, Layers, Linkedin, Mail, MapPin, Menu, Moon, Phone, ShieldCheck, Smartphone, Sun, Terminal, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { logVisit } from "@/lib/visits.functions";
 import workspace from "@/assets/developer-workspace.jpg";
 
 export const Route = createFileRoute("/")({
@@ -143,7 +145,9 @@ function Index() {
   const [lang, setLang] = useState<Lang>("sv");
   const [dark, setDark] = useState(false);
   const c = t[lang];
+  const logVisitFn = useServerFn(logVisit);
 
+  // Räkna ett besök en gång per webbläsarsession.
   useEffect(() => {
     if (localStorage.getItem("cv-lang") === "en") setLang("en");
     if (localStorage.getItem("cv-theme") === "dark") setDark(true);
