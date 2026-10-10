@@ -196,7 +196,7 @@ function Index() {
 
         <section id="kompetenser" className="section skills-section">
           <div className="section-heading"><div><span className="eyebrow">{c.skillsLabel}</span><h2>{c.skillsTitle}</h2></div><p>{c.skillsSub}</p></div>
-          <div className="skill-grid">{c.skills.map(([title, text], i) => { const Icon = skillIcons[i]; return <article className="skill-item" key={i}><Icon className="skill-icon" size={24} /><h3>{title}</h3><p>{text}</p><div className="tags">{[...skillItems[i], ...c.skillExtra[i]].map(item => <span key={item}>{item}</span>)}</div></article>; })}</div>
+          <div className="skill-grid">{c.skills.map(([title, text], i) => { const Icon = skillIcons[i]!; return <article className="skill-item" key={i}><Icon className="skill-icon" size={24} /><h3>{title}</h3><p>{text}</p><div className="tags">{[...(skillItems[i] ?? []), ...(c.skillExtra[i] ?? [])].map(item => <span key={item}>{item}</span>)}</div></article>; })}</div>
         </section>
 
         <section id="utbildning" className="section education-section">
