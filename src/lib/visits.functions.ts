@@ -1,9 +1,9 @@
-import { createServerFn, getRequestHeader } from "@tanstack/react-start";
+import { createServerFn } from "@tanstack/react-start";
 
 // Registrerar ett sidbesök. Körs från webbläsaren men skrivs bara av serverkoden.
 export const logVisit = createServerFn({ method: "POST" }).handler(async () => {
-  const host = getRequestHeader("host") ?? "";
-  if (host.includes("localhost")) return { ok: true, skipped: true };
+  // Hoppa över mätning i förhandsgranskningen (dev-servern) så egna öppningar inte räknas.
+  if (import.meta.env.DEV) return { ok: true, skipped: true };
 
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const { error } = await supabaseAdmin.from("page_visits").insert({});
