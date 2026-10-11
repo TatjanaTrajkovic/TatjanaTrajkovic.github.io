@@ -413,3 +413,18 @@ footer .wordmark { font-size: 21px; }
 .theme-button { height: 38px; width: 38px; box-shadow: none; }
 @media (max-width: 640px) { .header-tools { margin-left: auto; gap: 6px; } .header-tools .print-button { margin-left: 0; } .lang-button, .theme-button { height: 36px; } .theme-button { width: 36px; } .lang-button { min-width: 38px; padding: 0 8px; } }
 @media print { .header-tools .lang-button, .header-tools .theme-button { display: none !important; } }
+
+/* Dold statistiksida (/besokare) */
+.stats-page { max-width: 720px; margin: 0 auto; padding: 96px 24px 64px; color: var(--foreground); }
+.stats-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--muted-foreground); text-decoration: none; margin-bottom: 40px; }
+.stats-back:hover { color: var(--foreground); }
+.stats-page h1 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -0.02em; }
+.stats-note { color: var(--muted-foreground); font-size: 14px; margin-top: 8px; }
+.stats-card { margin-top: 32px; display: inline-flex; align-items: baseline; gap: 12px; padding: 24px 28px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--card); }
+.stats-icon { align-self: center; color: var(--muted-foreground); }
+.stats-number { font-size: clamp(40px, 8vw, 64px); font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.stats-label { color: var(--muted-foreground); font-size: 14px; font-weight: 600; }
+@media print { .stats-page { display: none; } }
+
+/* Text på hotellkortet: första appen utan AI */
+.project-first { margin-top: 10px; padding-left: 14px; border-left: 2px solid var(--primary); color: var(--muted-foreground); font-size: 13.5px; font-style: italic; }
