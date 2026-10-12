@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Code2, Database, Download, FlaskConical, Github, GraduationCap, Layers, Linkedin, Mail, MapPin, Menu, Moon, Phone, ShieldCheck, Smartphone, Sun, Terminal, X } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Code2, Database, Briefcase, Download, FlaskConical, Github, GraduationCap, Layers, Linkedin, Mail, MapPin, Menu, Moon, Phone, ShieldCheck, Smartphone, Sun, Terminal, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import workspace from "@/assets/developer-workspace.jpg";
@@ -26,11 +26,11 @@ const skillItems = [
   ["SQL", "NoSQL", "JUnit 5", "Mockito"],
   ["Git & GitHub", "Maven", "Docker", "Kubernetes", "npm"],
 ];
-const navIds = ["om-mig", "kompetenser", "utbildning", "projekt", "kontakt"];
+const navIds = ["om-mig", "kompetenser", "erfarenhet", "utbildning", "projekt", "kontakt"];
 
 const t = {
   sv: {
-    nav: ["Om mig", "Kompetenser", "Utbildning", "Projekt", "Kontakt"],
+    nav: ["Om mig", "Kompetenser", "Erfarenhet", "Utbildning", "Projekt", "Kontakt"],
     home: "Tatjana Trajkovic, början av sidan", mainMenu: "Huvudmeny", mobileMenu: "Mobilmeny",
     save: "Spara CV", openMenu: "Öppna meny", closeMenu: "Stäng meny",
     langLabel: "Show the page in English", langShort: "EN",
@@ -46,7 +46,11 @@ const t = {
     skillsLabel: "02 / KOMPETENSER", skillsTitle: "Min tekniska verktygslåda", skillsSub: "Backend som grund. Fullstack som perspektiv.",
     skills: [["Backend", "Strukturerad kod och stabila tjänster."], ["Frontend", "Från gränssnitt till helhetsupplevelse."], ["Databaser & testning", "Data, kvalitet och tillförlitlighet."], ["Verktyg & arbetssätt", "Samarbete genom hela utvecklingen."]],
     skillExtra: [[], [], ["Databaser"], ["Agila metoder"]],
-    eduLabel: "03 / UTBILDNING", eduTitle: ["Kunskap som", "blir praktik."], eduSub: ["En kombination av teknik,", "projekt och problemlösning."],
+    expLabel: "03 / ERFARENHET", expTitle: ["Kvalitet i", "praktiken."], expSub: ["Testning av riktiga produkter", "ur användarens perspektiv."],
+    testerTitle: "Software Tester (deltid)", testerOrg: "AI & SaaS Startup",
+    testerText1: "Arbetar deltid med manuell mjukvarutestning av en AI-baserad SaaS-plattform inom B2B, med fokus på användargränssnitt, funktionalitet och användarupplevelse.",
+    testerDate: "AUG 2026 — NU", testerTags: ["Manuell testning", "Användargränssnitt", "Funktionalitet", "Användarupplevelse"],
+    eduLabel: "04 / UTBILDNING", eduTitle: ["Kunskap som", "blir praktik."], eduSub: ["En kombination av teknik,", "projekt och problemlösning."],
     ongoing: "Pågående", javaTitle: "Javautvecklare · Fullstack", ithsName: "IT-Högskolan (ITHS) · Yrkeshögskola",
     ithsText: "Projektbaserad utbildning med Java, databaser, webbapplikationer och integrationer. Agila arbetssätt och LIA knyter ihop teori med praktisk utveckling.",
     facts: ["400 YH-poäng", "120 poäng LIA", "2 år"], hideCourses: "Dölj kursinnehåll", showCourses: "Visa utbildningens innehåll",
@@ -57,7 +61,7 @@ const t = {
     comtradeText: "Intensiv utbildning med över 200 lärarledda timmar. HTML, CSS, JavaScript, Git, kodgranskning och testning. Avslutades med ett projekt för hotellbokning.",
     bmaTitle: "Biomedicinsk analytiker", bmaSchool: "Malmö universitet · Yrkesexamen",
     bmaText: "Biomedicinsk laboratorievetenskap med fokus på analys, dokumentation, kvalitetssäkring och spårbarhet.",
-    projLabel: "04 / PROJEKT", projTitle: "Från lärande till lösning", projType: "ARBETE & UTBILDNING",
+    projLabel: "05 / PROJEKT", projTitle: "Från lärande till lösning", projType: "ARBETE & UTBILDNING",
     phoneSub: "denna månad", phoneBottom: "Android & iPhone · kommande publicering",
     budgetTitle: "Budget-app för mobil", budgetSub: "Budgeteero",
     budgetText1: "Byggde Budgeteero på uppdrag för OneUp Engineering. Appen hjälper dig hålla koll på dina utgifter mot en budget du sätter själv.",
@@ -79,12 +83,12 @@ const t = {
     liaCardTitle: "Integrationslösningar", liaOrg: "Enheten Design och Mjukvaruutveckling · Koncernstab Digitalisering · Västra Götalandsregionen",
     liaPoints: [["Java", "Backend, tjänster och testning — grunden jag tar med mig från IT-Högskolan."], ["Integration", "Web services och integrationer finns med i min kursprofil och är det jag vill fördjupa under praktiken."], ["Tillsammans", "Jag trivs där man lyssnar in, ger feedback och lär av varandra."]],
     liaTags: ["Nov 2026 — Jun 2027", "120 YH-poäng", "Göteborg"],
-    contactLabel: "05 / KONTAKT", contactTitle: "Hör gärna av dig", contactSub: "Maila eller ring — jag svarar gärna.",
+    contactLabel: "06 / KONTAKT", contactTitle: "Hör gärna av dig", contactSub: "Maila eller ring — jag svarar gärna.",
     email: "E-post", phone: "Telefon", city: "Ort", cityValue: "Göteborg",
     footer: "Java & fullstack. Med omsorg om detaljerna.",
   },
   en: {
-    nav: ["About", "Skills", "Education", "Projects", "Contact"],
+    nav: ["About", "Skills", "Experience", "Education", "Projects", "Contact"],
     home: "Tatjana Trajkovic, top of page", mainMenu: "Main menu", mobileMenu: "Mobile menu",
     save: "Save CV", openMenu: "Open menu", closeMenu: "Close menu",
     langLabel: "Visa sidan på svenska", langShort: "SV",
@@ -100,7 +104,11 @@ const t = {
     skillsLabel: "02 / SKILLS", skillsTitle: "My technical toolbox", skillsSub: "Backend as the foundation. Full-stack as the perspective.",
     skills: [["Backend", "Structured code and stable services."], ["Frontend", "From interface to the full experience."], ["Databases & testing", "Data, quality and reliability."], ["Tools & ways of working", "Collaboration throughout development."]],
     skillExtra: [[], [], ["Databases"], ["Agile methods"]],
-    eduLabel: "03 / EDUCATION", eduTitle: ["Knowledge that", "becomes practice."], eduSub: ["A combination of technology,", "projects and problem solving."],
+    expLabel: "03 / EXPERIENCE", expTitle: ["Quality in", "practice."], expSub: ["Testing real products", "from the user's perspective."],
+    testerTitle: "Software Tester (part-time)", testerOrg: "AI & SaaS Startup",
+    testerText1: "Working part-time on manual software testing of an AI-based B2B SaaS platform, focusing on user interface, functionality and user experience.",
+    testerDate: "AUG 2026 — PRESENT", testerTags: ["Manual testing", "User interface", "Functionality", "User experience"],
+    eduLabel: "04 / EDUCATION", eduTitle: ["Knowledge that", "becomes practice."], eduSub: ["A combination of technology,", "projects and problem solving."],
     ongoing: "Ongoing", javaTitle: "Java Developer · Full-stack", ithsName: "IT-Högskolan (ITHS) · Higher Vocational Education",
     ithsText: "Project-based programme covering Java, databases, web applications and integrations. Agile ways of working and an internship (LIA) connect theory with hands-on development.",
     facts: ["400 credits", "120 credits internship", "2 years"], hideCourses: "Hide course content", showCourses: "Show programme content",
@@ -111,7 +119,7 @@ const t = {
     comtradeText: "Intensive programme with more than 200 instructor-led hours. HTML, CSS, JavaScript, Git, code review and testing. Finished with a hotel booking project.",
     bmaTitle: "Biomedical Scientist", bmaSchool: "Malmö University · Professional degree",
     bmaText: "Biomedical laboratory science focused on analysis, documentation, quality assurance and traceability.",
-    projLabel: "04 / PROJECTS", projTitle: "From learning to solutions", projType: "WORK & EDUCATION",
+    projLabel: "05 / PROJECTS", projTitle: "From learning to solutions", projType: "WORK & EDUCATION",
     phoneSub: "this month", phoneBottom: "Android & iPhone · upcoming release",
     budgetTitle: "Budget app for mobile", budgetSub: "Budgeteero",
     budgetText1: "Built Budgeteero on assignment for OneUp Engineering. The app helps you keep track of your expenses against a budget you set yourself.",
@@ -133,7 +141,7 @@ const t = {
     liaCardTitle: "Integration solutions", liaOrg: "Design and Software Development unit · Group Staff Digitalisation · Region Västra Götaland",
     liaPoints: [["Java", "Backend, services and testing — the foundation I bring from IT-Högskolan."], ["Integration", "Web services and integrations are part of my courses and what I want to deepen during the internship."], ["Together", "I thrive where people listen, give feedback and learn from each other."]],
     liaTags: ["Nov 2026 — Jun 2027", "120 credits", "Gothenburg"],
-    contactLabel: "05 / CONTACT", contactTitle: "Feel free to get in touch", contactSub: "Email or call — I'm happy to answer.",
+    contactLabel: "06 / CONTACT", contactTitle: "Feel free to get in touch", contactSub: "Email or call — I'm happy to answer.",
     email: "Email", phone: "Phone", city: "Location", cityValue: "Gothenburg, Sweden",
     footer: "Java & full-stack. With care for the details.",
   },
@@ -199,6 +207,13 @@ function Index() {
         <section id="kompetenser" className="section skills-section">
           <div className="section-heading"><div><span className="eyebrow">{c.skillsLabel}</span><h2>{c.skillsTitle}</h2></div><p>{c.skillsSub}</p></div>
           <div className="skill-grid">{c.skills.map(([title, text], i) => { const Icon = skillIcons[i]!; return <article className="skill-item" key={i}><Icon className="skill-icon" size={24} /><h3>{title}</h3><p>{text}</p><div className="tags">{[...(skillItems[i] ?? []), ...(c.skillExtra[i] ?? [])].map(item => <span key={item}>{item}</span>)}</div></article>; })}</div>
+        </section>
+
+        <section id="erfarenhet" className="section education-section">
+          <div className="section-label"><span>{c.expLabel}</span><h2>{c.expTitle[0]}<br />{c.expTitle[1]}</h2><p>{c.expSub[0]}<br />{c.expSub[1]}</p></div>
+          <div className="education-list">
+            <article className="education-item"><div className="education-top"><span className="school-icon"><Briefcase size={21} /></span><span className="date">{c.testerDate}</span><span className="current-label">{c.ongoing}</span></div><h3>{c.testerTitle}</h3><p className="school-name">{c.testerOrg}</p><p>{c.testerText1}</p><div className="education-facts">{c.testerTags.map(x => <span key={x}>{x}</span>)}</div></article>
+          </div>
         </section>
 
         <section id="utbildning" className="section education-section">
