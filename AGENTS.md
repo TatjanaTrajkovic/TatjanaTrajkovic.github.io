@@ -12,3 +12,4 @@
 - Keep the personal CV as one document at `/` with in-page section navigation; this preserves continuous reading and printing.
 - Keep CV printing browser-native with a dedicated print stylesheet; this avoids a separate PDF generation service.
 - Prebundle the CV's UI dependencies in Vite optimizeDeps alongside the template's React entries; this prevents late dependency discovery from replacing the React graph during an active preview session.
+- Publish the CV as a static site: prerender only `/` and deploy `dist/client` to GitHub Pages via Actions; GitHub Pages cannot run server functions, so the site must not depend on them.
