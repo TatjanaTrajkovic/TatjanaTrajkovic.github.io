@@ -8,6 +8,8 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   vite: {
+    // GitHub Pages user site serves from the domain root.
+    base: "/",
     optimizeDeps: {
       // Prebundle the CV controls with React before the first browser load.
       // Late discovery otherwise replaces the React dependency graph mid-session.
@@ -24,5 +26,8 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // Static HTML for GitHub Pages: only the CV page exists.
+    pages: [{ path: "/" }],
+    prerender: { enabled: true, autoStaticPathsDiscovery: false },
   },
 });
