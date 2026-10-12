@@ -13,8 +13,9 @@
 - [x] Ange budgetappens namn Budgeteero på projektkortet.
 - [x] Lägg till LabFlow, hennes eget lärprojekt i Java, som ett projektkort.
 - [x] Ange budgetappens namn Budgeteero på projektkortet, med huvudrubriken "Budget-app för mobil".
-- [x] Lägg till besöksräknare synlig bara för Tatjana (dold statistiksida /besokare).
+- [x] Besöksräknaren borttagen (behövs inte längre)
 - [x] Lägg till texten "Detta är min första app – skapad helt utan AI-assistenter!" på hotellkortet.
 - [ ] Skicka länken till koden för LabFlow så läggs den till på kortet.
 - [ ] Bekräfta stavningen av företagsnamnet OneUp Engineering med Tatjana.
 - [ ] Publicera sidan och dela länken med VGR.
+- [x] Statiskt bygge för GitHub Pages (tatjanatrajkovic.github.io)
