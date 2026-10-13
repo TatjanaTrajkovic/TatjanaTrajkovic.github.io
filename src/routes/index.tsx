@@ -28,7 +28,7 @@ const skillItems = [
   ["Git & GitHub", "Maven", "Docker", "Kubernetes", "npm"],
 ];
 // Google Play page for Budgeteero.
-const PLAY_STORE_URL = "https://play.google.com/store";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.budgeteero.app";
 // Screenshots per project, stored in public/projects/<project>/. An empty list shows the illustration instead.
 const projectSlides: Record<"budget" | "lab" | "hotel", Slide[]> = {
   budget: [
