@@ -29,7 +29,18 @@ const skillItems = [
 ];
 // Screenshots per project, stored in public/projects/<project>/. An empty list shows the illustration instead.
 const projectSlides: Record<"budget" | "lab" | "hotel", Slide[]> = {
-  budget: [],
+  budget: [
+    { src: "/projects/budgeteero/1.jpg", alt: "Budgeteero: sex skärmar från appen i ljust och mörkt läge" },
+    { src: "/projects/budgeteero/2.jpg", alt: "Budgeteeros inloggning" },
+    { src: "/projects/budgeteero/3.jpg", alt: "Översikt med kvar att spendera, inkomster, utgifter och budget" },
+    { src: "/projects/budgeteero/4.jpg", alt: "Utgifter per kategori i ett cirkeldiagram" },
+    { src: "/projects/budgeteero/5.jpg", alt: "Analys med smarta insikter och månadens nyckeltal" },
+    { src: "/projects/budgeteero/6.jpg", alt: "Trender per kategori och när pengarna spenderas mest" },
+    { src: "/projects/budgeteero/7.jpg", alt: "Lista med transaktioner och filter" },
+    { src: "/projects/budgeteero/8.jpg", alt: "Lägg till en transaktion med belopp, datum och kategori" },
+    { src: "/projects/budgeteero/9.jpg", alt: "Kategorier med antal transaktioner och summa" },
+    { src: "/projects/budgeteero/10.jpg", alt: "Översikten i mörkt läge" },
+  ],
   lab: [
     { src: "/projects/labflow/1.jpg", alt: "LabFlow: översikt med dashboard, kod, databasmodell och teknikstack" },
     { src: "/projects/labflow/2.jpg", alt: "LabFlow: ett modernt system för laboratoriehantering" },
