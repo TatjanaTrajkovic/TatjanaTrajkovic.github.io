@@ -216,7 +216,7 @@ h3 { font-size: 17px; font-weight: 700; }
 .date { font-size: 9px; color: var(--muted-foreground); font-weight: 650; }
 .current-label { margin-left: auto; padding: 4px 9px; border-radius: 4px; background: var(--secondary); color: var(--primary); font-size: 9px; }
 .education-item > .school-name { color: var(--foreground); font-size: 12px; margin: 5px 0 10px; }
-.education-facts { display: flex; gap: 19px; margin-top: 16px; color: var(--primary); font-size: 10px; font-weight: 650; }
+.education-facts { display: flex; flex-wrap: wrap; gap: 8px 19px; margin-top: 16px; color: var(--primary); font-size: 10px; font-weight: 650; }
 .course-toggle { font-size: 11px; padding: 0; margin-top: 8px; }
 .course-list > p { font-size: 11px; color: var(--muted-foreground); margin: 12px 0; }
 table { width: 100%; font-size: 12px; border-collapse: collapse; }
@@ -306,6 +306,13 @@ footer .wordmark { font-size: 21px; }
   .project-content { gap: 28px; }
   .project-code { font-size: 9px; padding: 28px 18px; }
   .contact-grid { grid-template-columns: repeat(3, 1fr); }
+}
+/* Six menu items do not fit beside the header buttons on tablets: use the menu button up to 900px. */
+@media (max-width: 900px) {
+  .desktop-nav { display: none; }
+  .header-tools { margin-left: auto; }
+  .mobile-menu-button { display: inline-flex; }
+  .mobile-nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--background); padding: 15px 6.25%; border-bottom: 1px solid var(--border); display: grid; gap: 20px; font-size: 14px; }
 }
 @media (max-width: 640px) {
   html { scroll-padding-top: 20px; }
@@ -429,3 +436,4 @@ footer .wordmark { font-size: 21px; }
 .slides-dots { display: flex; gap: 8px; }
 .slides-dots button { width: 8px; height: 8px; border-radius: 50%; background: var(--code-comment); border: 0; padding: 0; cursor: pointer; }
 .slides-dots button.is-active { background: var(--code-text); }
+@media (max-width: 360px) { .site-header { gap: 6px; padding-inline: 4%; } .wordmark { font-size: 20px; } .print-button { padding: 0 8px; } }
