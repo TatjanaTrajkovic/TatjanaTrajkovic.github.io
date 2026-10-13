@@ -23,7 +23,7 @@ export function ProjectSlides({ slides, prevLabel, nextLabel, slideLabel }: { sl
         <div className="slides-track">
           {slides.map((s, i) => (
             <div className="slide" key={s.src} role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${slides.length}`}>
-              <img src={s.src} alt={s.alt} loading={i === 0 ? "eager" : "lazy"} />
+              <img src={s.src} alt={s.alt} />
             </div>
           ))}
         </div>
