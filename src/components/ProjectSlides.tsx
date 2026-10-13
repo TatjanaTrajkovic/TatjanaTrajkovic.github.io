@@ -8,6 +8,7 @@ export type Slide = { src: string; alt: string };
 export function ProjectSlides({ slides, prevLabel, nextLabel, slideLabel }: { slides: Slide[]; prevLabel: string; nextLabel: string; slideLabel: string }) {
   const [ref, api] = useEmblaCarousel({ loop: true });
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   const onSelect = useCallback(() => api && setIndex(api.selectedScrollSnap()), [api]);
   useEffect(() => {
@@ -17,8 +18,15 @@ export function ProjectSlides({ slides, prevLabel, nextLabel, slideLabel }: { sl
     return () => { api.off("select", onSelect); };
   }, [api, onSelect]);
 
+  // Advance every 4 seconds; restarts after each slide change and pauses on hover.
+  useEffect(() => {
+    if (!api || paused || slides.length < 2) return;
+    const timer = setTimeout(() => api.scrollNext(), 4000);
+    return () => clearTimeout(timer);
+  }, [api, paused, index, slides.length]);
+
   return (
-    <div className="project-visual project-slides" role="region" aria-roledescription="carousel">
+    <div className="project-visual project-slides" role="region" aria-roledescription="carousel" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <div className="slides-viewport" ref={ref}>
         <div className="slides-track">
           {slides.map((s, i) => (
