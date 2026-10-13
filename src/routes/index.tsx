@@ -30,7 +30,16 @@ const skillItems = [
 // Screenshots per project, stored in public/projects/<project>/. An empty list shows the illustration instead.
 const projectSlides: Record<"budget" | "lab" | "hotel", Slide[]> = {
   budget: [],
-  lab: [{ src: "/projects/labflow/1.jpg", alt: "LabFlow: översikt med dashboard, kod, databasmodell och teknikstack" }],
+  lab: [
+    { src: "/projects/labflow/1.jpg", alt: "LabFlow: översikt med dashboard, kod, databasmodell och teknikstack" },
+    { src: "/projects/labflow/2.jpg", alt: "LabFlow: ett modernt system för laboratoriehantering" },
+    { src: "/projects/labflow/3.jpg", alt: "LabFlows dashboard med prover, analyser och resultat" },
+    { src: "/projects/labflow/4.jpg", alt: "SampleController i Java och projektstrukturen i IntelliJ" },
+    { src: "/projects/labflow/5.jpg", alt: "Databasmodell med tabellerna sample, analysis och result" },
+    { src: "/projects/labflow/6.jpg", alt: "Teknikstack: Java 17, Spring Boot, PostgreSQL, Docker, GitHub och IntelliJ IDEA" },
+    { src: "/projects/labflow/7.jpg", alt: "Terminal med LabFlow och PostgreSQL som körs i Docker" },
+    { src: "/projects/labflow/8.jpg", alt: "Anteckningsblock med nästa steg för LabFlow" },
+  ],
   hotel: [
     { src: "/projects/hotel/1.jpg", alt: "Startsidan för Sandra's Hotell & Spa Resort med bokningsformulär" },
     { src: "/projects/hotel/2.jpg", alt: "Avsnitten om hotellet och rummen" },
