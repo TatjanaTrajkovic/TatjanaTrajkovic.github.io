@@ -35,7 +35,7 @@ const projectSlides: Record<"budget" | "lab" | "hotel", Slide[]> = {
     { src: "/projects/hotel/1.jpg", alt: "Startsidan för Sandra's Hotell & Spa Resort med bokningsformulär" },
     { src: "/projects/hotel/2.jpg", alt: "Avsnitten om hotellet och rummen" },
     { src: "/projects/hotel/3.jpg", alt: "Avsnitten om restaurangen och spa" },
-    { src: "/projects/hotel/4.jpg", alt: "Kontaktformuläret" },
+    { src: "/projects/hotel/4.jpg", alt: "Avsnittet om sightseeing" },
   ],
 };
 const navIds = ["om-mig", "kompetenser", "erfarenhet", "utbildning", "projekt", "kontakt"];
