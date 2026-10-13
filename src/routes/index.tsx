@@ -41,7 +41,7 @@ const projectSlides: Record<"budget" | "lab" | "hotel", Slide[]> = {
     { src: "/projects/labflow/1.jpg", alt: "LabFlow: översikt med dashboard, kod, databasmodell och teknikstack" },
     { src: "/projects/labflow/2.jpg", alt: "LabFlow: ett modernt system för laboratoriehantering" },
     { src: "/projects/labflow/3.jpg", alt: "LabFlows dashboard med prover, analyser och resultat" },
-    { src: "/projects/labflow/4.jpg", alt: "SampleController i Java och projektstrukturen i IntelliJ" },
+    { src: "/projects/labflow/4.png", alt: "SampleController i Java och projektstrukturen i IntelliJ" },
     { src: "/projects/labflow/5.jpg", alt: "Databasmodell med tabellerna sample, analysis och result" },
     { src: "/projects/labflow/6.jpg", alt: "Teknikstack: Java 17, Spring Boot, PostgreSQL, Docker, GitHub och IntelliJ IDEA" },
     { src: "/projects/labflow/7.jpg", alt: "Terminal med LabFlow och PostgreSQL som körs i Docker" },
