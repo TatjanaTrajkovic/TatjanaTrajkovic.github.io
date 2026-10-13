@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Code2, Database, Briefcase, Download, FlaskConical, Github, GraduationCap, Layers, Linkedin, Mail, MapPin, Menu, Moon, Phone, ShieldCheck, Smartphone, Sun, Terminal, X } from "lucide-react";
+import { Apple, ArrowDown, ArrowUpRight, Code2, Database, Briefcase, Download, FlaskConical, Github, GraduationCap, Layers, Linkedin, Mail, MapPin, Menu, Moon, Phone, Play, ShieldCheck, Smartphone, Sun, Terminal, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import workspace from "@/assets/developer-workspace.jpg";
@@ -27,6 +27,8 @@ const skillItems = [
   ["SQL", "NoSQL", "JUnit 5", "Mockito"],
   ["Git & GitHub", "Maven", "Docker", "Kubernetes", "npm"],
 ];
+// Google Play page for Budgeteero.
+const PLAY_STORE_URL = "https://play.google.com/store";
 // Screenshots per project, stored in public/projects/<project>/. An empty list shows the illustration instead.
 const projectSlides: Record<"budget" | "lab" | "hotel", Slide[]> = {
   budget: [
@@ -92,7 +94,7 @@ const t = {
     budgetTitle: "Budget-app för mobil", budgetSub: "Budgeteero",
     budgetText1: "Byggde Budgeteero på uppdrag för OneUp Engineering. Appen hjälper dig hålla koll på dina utgifter mot en budget du sätter själv.",
     budgetText2: "Jag stod för både appen och serverdelen — från gränssnittet i React Native till inloggning och API:er i Java.",
-    budgetNote: "Publiceras i Google Play & App Store",
+    budgetNote: "Publiceras i Google Play & App Store", storePlay: "Hämta på Google Play", storeApple: "App Store – kommer snart",
     labHead: "PROVFLÖDE", labFlow: ["Inlämnat", "Analys", "Svar"], labTitle: "Laboratoriesystem för prover",
     labText1: "Bygger ett system där laboratoriepersonal registrerar patienter och prover, följer ett prov från inlämning till färdigt svar och söker fram prover på ID.",
     labText2: "Jag valde ett laboratoriesystem för att jag har arbetat som biomedicinsk analytiker och känner igen behoven. Projektet är mitt sätt att fördjupa mig i Java och backend — från databas och API till det som syns på skärmen.",
@@ -151,7 +153,7 @@ const t = {
     budgetTitle: "Budget app for mobile", budgetSub: "Budgeteero",
     budgetText1: "Built Budgeteero on assignment for OneUp Engineering. The app helps you keep track of your expenses against a budget you set yourself.",
     budgetText2: "I was responsible for both the app and the server side — from the React Native interface to login and APIs in Java.",
-    budgetNote: "To be released on Google Play & the App Store",
+    budgetNote: "To be released on Google Play & the App Store", storePlay: "Get it on Google Play", storeApple: "App Store – coming soon",
     labHead: "SAMPLE FLOW", labFlow: ["Received", "Analysis", "Result"], labTitle: "Laboratory sample system",
     labText1: "Building a system where laboratory staff register patients and samples, follow a sample from submission to final result, and search for samples by ID.",
     labText2: "I chose a laboratory system because I have worked as a biomedical scientist and recognise the needs. The project is my way of going deeper into Java and backend — from database and API to what appears on screen.",
@@ -254,7 +256,7 @@ function Index() {
         </section>
 
         <section id="projekt" className="section project-section"><div className="section-heading"><div><span className="eyebrow">{c.projLabel}</span><h2>{c.projTitle}</h2></div><span className="project-type">{c.projType}</span></div>
-          <article className="project-content">{projectSlides.budget.length ? <ProjectSlides slides={projectSlides.budget} prevLabel={c.slidePrev} nextLabel={c.slideNext} slideLabel={c.slideGo} /> : <div className="project-visual project-phone" aria-hidden="true"><div className="phone-frame"><div className="phone-notch" /><span className="phone-label">BUDGETEERO</span><span className="phone-sub">{c.phoneSub}</span><div className="phone-bar"><span /></div><ul className="phone-rows"><li><span /><em /></li><li><span /><em /></li><li><span /><em /></li></ul></div><div className="project-visual-bottom"><Smartphone size={18} /><span>{c.phoneBottom}</span></div></div>}<div className="project-info"><span className="eyebrow">01 — ONEUP ENGINEERING</span><h3>{c.budgetTitle}</h3><p className="project-subtitle">{c.budgetSub}</p><p>{c.budgetText1}</p><p>{c.budgetText2}</p><div className="tags"><span>React Native</span><span>TypeScript</span><span>Expo</span><span>Java</span><span>Spring Boot</span><span>Spring Security &amp; JWT</span><span>Maven</span></div><span className="project-note">{c.budgetNote}</span></div></article>
+          <article className="project-content">{projectSlides.budget.length ? <ProjectSlides slides={projectSlides.budget} prevLabel={c.slidePrev} nextLabel={c.slideNext} slideLabel={c.slideGo} /> : <div className="project-visual project-phone" aria-hidden="true"><div className="phone-frame"><div className="phone-notch" /><span className="phone-label">BUDGETEERO</span><span className="phone-sub">{c.phoneSub}</span><div className="phone-bar"><span /></div><ul className="phone-rows"><li><span /><em /></li><li><span /><em /></li><li><span /><em /></li></ul></div><div className="project-visual-bottom"><Smartphone size={18} /><span>{c.phoneBottom}</span></div></div>}<div className="project-info"><span className="eyebrow">01 — ONEUP ENGINEERING</span><h3>{c.budgetTitle}</h3><p className="project-subtitle">{c.budgetSub}</p><p>{c.budgetText1}</p><p>{c.budgetText2}</p><div className="tags"><span>React Native</span><span>TypeScript</span><span>Expo</span><span>Java</span><span>Spring Boot</span><span>Spring Security &amp; JWT</span><span>Maven</span></div><div className="store-links"><a className="store-link" href={PLAY_STORE_URL} target="_blank" rel="noreferrer"><Play size={14} />{c.storePlay}</a><span className="store-link is-soon" aria-disabled="true"><Apple size={14} />{c.storeApple}</span></div></div></article>
           <article className="project-content">{projectSlides.lab.length ? <ProjectSlides slides={projectSlides.lab} prevLabel={c.slidePrev} nextLabel={c.slideNext} slideLabel={c.slideGo} /> : <div className="project-visual project-lab" aria-hidden="true"><div className="lab-head"><span className="lab-dot" />{c.labHead}<span className="lab-id">STATUS</span></div><ul className="lab-flow"><li className="is-done">{c.labFlow[0]}</li><li className="is-active">{c.labFlow[1]}</li><li>{c.labFlow[2]}</li></ul><div className="lab-bar"><span /></div><ul className="lab-rows"><li><span /><em /></li><li><span /><em /></li><li><span /><em /></li></ul><div className="project-visual-bottom"><FlaskConical size={18} /><span>Java · Spring Boot · PostgreSQL · React</span></div></div>}<div className="project-info"><span className="eyebrow">02 — LABFLOW</span><h3>{c.labTitle}</h3><p>{c.labText1}</p><p>{c.labText2}</p><div className="tags"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>React</span></div><span className="project-note">{c.labNote}</span></div></article>
           <article className="project-content">{projectSlides.hotel.length ? <ProjectSlides slides={projectSlides.hotel} prevLabel={c.slidePrev} nextLabel={c.slideNext} slideLabel={c.slideGo} /> : <div className="project-visual" aria-hidden="true"><div className="browser-bar"><span /><span /><span /><div>hotel booking / final project</div></div><div className="project-code"><span className="code-comment">{c.codeComment}</span><p><span className="code-keyword">const</span> stay = &#123;</p><p className="code-indent">destination: <span className="code-string">{c.codeDest}</span>,</p><p className="code-indent">builtWith: [<span className="code-string">'HTML', 'CSS', 'JavaScript'</span>]</p><p>&#125;;</p></div><div className="project-visual-bottom"><Code2 size={18} /><span>{c.hotelBottom}</span></div></div>}<div className="project-info"><span className="eyebrow">03 — CODE BY COMTRADE</span><h3>{c.hotelTitle}</h3><p>{c.hotelText1}</p><p>{c.hotelText2}</p><p className="project-first">{c.hotelFirst}</p><div className="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a className="project-link" href="https://github.com/TatjanaTrajkovic/HotelBookingApp" target="_blank" rel="noreferrer"><Github size={16} /> {c.hotelLink} <ArrowUpRight size={15} /></a></div></article>
         </section>
