@@ -30,7 +30,7 @@ const skillItems = [
 // Screenshots per project, stored in public/projects/<project>/. An empty list shows the illustration instead.
 const projectSlides: Record<"budget" | "lab" | "hotel", Slide[]> = {
   budget: [],
-  lab: [],
+  lab: [{ src: "/projects/labflow/1.jpg", alt: "LabFlow: översikt med dashboard, kod, databasmodell och teknikstack" }],
   hotel: [
     { src: "/projects/hotel/1.jpg", alt: "Startsidan för Sandra's Hotell & Spa Resort med bokningsformulär" },
     { src: "/projects/hotel/2.jpg", alt: "Avsnitten om hotellet och rummen" },
