@@ -159,7 +159,6 @@
   --input: var(--border);
   --ring: var(--primary);
   --hero-veil: linear-gradient(100deg, oklch(0.994 0.002 150 / 93%) 0%, oklch(0.994 0.002 150 / 80%) 24%, oklch(0.994 0.002 150 / 36%) 50%, oklch(0.994 0.002 150 / 8%) 74%, oklch(0.994 0.002 150 / 0%) 96%);
-  --hero-veil-mobile: linear-gradient(180deg, oklch(0.994 0.002 150 / 42%) 0%, oklch(0.994 0.002 150 / 58%) 52%, oklch(0.994 0.002 150 / 74%) 100%);
   --code-bg: oklch(0.25 0.02 160);
   --code-text: oklch(0.9 0.015 150);
   --code-comment: oklch(0.65 0.03 160);
@@ -327,9 +326,10 @@ footer .wordmark { font-size: 21px; }
   .print-button { margin-left: auto; font-size: 11px; padding: 0 11px; }
   .mobile-menu-button { display: inline-flex; }
   .mobile-nav { position: absolute; top: 72px; left: 0; right: 0; background: var(--background); padding: 15px 6%; border-bottom: 1px solid var(--border); display: grid; gap: 20px; font-size: 14px; }
-  .hero { min-height: 605px; }
-  .hero-image { object-position: 37% center; opacity: .85; }
-  .hero::after { background: var(--hero-veil-mobile); }
+  /* Like desktop: text over the photo, shifted so the laptop shows, with a veil in the page background colour. */
+  .hero { min-height: 640px; }
+  .hero-image { object-position: 80% center; }
+  .hero::after { background: linear-gradient(100deg, color-mix(in oklch, var(--background) 90%, transparent) 0%, color-mix(in oklch, var(--background) 80%, transparent) 50%, color-mix(in oklch, var(--background) 45%, transparent) 78%, color-mix(in oklch, var(--background) 15%, transparent) 100%); }
   .hero-inner { padding: 47px 6% 90px; }
   h1 { font-size: 54px; }
   .hero-role { font-size: 18px; margin-top: 22px; }
@@ -417,7 +417,6 @@ footer .wordmark { font-size: 21px; }
   --input: var(--border);
   --ring: var(--primary);
   --hero-veil: linear-gradient(100deg, oklch(0.19 0.014 160 / 94%) 0%, oklch(0.19 0.014 160 / 84%) 26%, oklch(0.19 0.014 160 / 50%) 52%, oklch(0.19 0.014 160 / 20%) 76%, oklch(0.19 0.014 160 / 8%) 96%);
-  --hero-veil-mobile: linear-gradient(180deg, oklch(0.19 0.014 160 / 72%) 0%, oklch(0.19 0.014 160 / 80%) 52%, oklch(0.19 0.014 160 / 90%) 100%);
   --code-bg: oklch(0.14 0.014 160);
   color-scheme: dark;
 }
