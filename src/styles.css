@@ -241,6 +241,10 @@ td:last-child, th:last-child { text-align: right; white-space: nowrap; }
 .project-info .tags { margin-top: 22px; }
 .project-link { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin-top: 18px; padding: 9px 13px; border: 1px solid var(--primary); border-radius: 4px; font-size: 12px; font-weight: 650; color: var(--primary); }
 .project-link:hover { background: var(--primary); color: var(--primary-foreground); }
+.project-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.project-links .project-link { margin-top: 0; }
+.project-link.is-primary { background: var(--primary); color: var(--primary-foreground); }
+.project-link.is-primary:hover { opacity: .88; }
 .project-link svg:last-child { transition: transform .2s ease; }
 .project-link:hover svg:last-child { transform: translate(2px, -2px); }
 .project-content + .project-content { margin-top: 46px; padding-top: 46px; border-top: 1px solid var(--border); }
